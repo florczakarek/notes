@@ -1,10 +1,8 @@
-import './App.css';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Notes from './pages/Notes';
-import NoteDetail from './pages/NoteDetail';
-import Navbar from './components/Navbar';
-import NotFound from './pages/NotFound';
 import { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Notes, NoteDetail, NotFound } from './pages/index';
+import Navbar from './components/Navbar';
+import './App.css';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -15,9 +13,7 @@ function App() {
       if (saveNotes) {
         setNotes(saveNotes);
       }
-    } catch (error) {
-      console.log(error.message);
-    }
+    } catch (error) {}
   }, []);
 
   return (

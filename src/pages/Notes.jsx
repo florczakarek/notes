@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { v4 as uuid } from 'uuid';
 import NoteList from '../components/NoteList';
 import styles from './Notes.module.css';
@@ -25,13 +25,10 @@ const Notes = ({ notes, setNotes }) => {
       setTitle('');
       setMarkdown('');
     }
-
-    console.log(title, markdown);
   };
 
   const deleteNote = (idToDelete) => {
     const filteredNotes = notes.filter((note) => note.id !== idToDelete);
-    console.log(filteredNotes);
     setNotes(filteredNotes);
   };
 
@@ -43,7 +40,7 @@ const Notes = ({ notes, setNotes }) => {
     <main className={styles.main}>
       <div className={styles['sidebar-form']}>
         <form className={styles.form} onSubmit={handleAdd}>
-          <label htmlFor='title'>Let's create note</label>
+          <label htmlFor='title'>Single Note form</label>
           <input
             autoFocus
             value={title}

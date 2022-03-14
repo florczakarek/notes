@@ -1,5 +1,5 @@
-import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import styles from './SingleNote.module.css';
 

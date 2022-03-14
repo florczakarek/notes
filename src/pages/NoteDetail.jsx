@@ -6,7 +6,6 @@ const Note = ({ notes, setNotes }) => {
   const { idParam } = useParams();
 
   const findNote = notes.find((note) => note.id === idParam);
-  console.log(findNote);
   const { title, markdown, lastModified } = findNote;
 
   const navigate = useNavigate();
