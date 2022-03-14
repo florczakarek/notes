@@ -1,0 +1,45 @@
+.nav {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to left, #ffff00, white);
+}
+
+.logo {
+  width: 80px;
+  height: 80px;
+}
+
+.nav .btn {
+  font-size: 1.6rem;
+  background: transparent;
+  padding: 8px 16px;
+  margin-right: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid rgba(131, 116, 116, 0.925);
+  transition: all 0.4s ease-in-out;
+}
+.btn:hover {
+  background: rgba(131, 116, 116, 0.925);
+}
+
+.btn a {
+  text-decoration: none;
+  color: rgba(131, 116, 116, 0.925);
+  transition: color 0.4s ease-in-out;
+}
+
+.btn:hover a {
+  color: yellow;
+}
+.title {
+  color: #838282;
+  margin-left: 16px;
+  font-size: 2rem;
+}

@@ -4,15 +4,26 @@ import Notes from './pages/Notes';
 import NoteDetail from './pages/NoteDetail';
 import Navbar from './components/Navbar';
 import NotFound from './pages/NotFound';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const [notes, setNotes] = useState([]);
 
+  useEffect(() => {
+    try {
+      const saveNotes = JSON.parse(localStorage.getItem('notes'));
+      if (saveNotes) {
+        setNotes(saveNotes);
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  }, []);
+
   return (
-    <div className='App'>
-      <Navbar />
+    <div>
       <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path='/' element={<Navigate to='/notes' />} />
           <Route

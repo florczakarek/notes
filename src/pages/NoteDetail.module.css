@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 10rem auto;
+  width: 60%;
+  height: 50vh;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.note {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: linear-gradient(to right, yellow, whitesmoke);
+  color: #333;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 2px 5px 10px gray;
+}
+
+.markdown {
+  font-size: 2rem;
+  margin-top: -1.5rem;
+}
+
+small {
+  color: black;
+  align-self: flex-end;
+}

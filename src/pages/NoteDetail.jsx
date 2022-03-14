@@ -1,5 +1,6 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { RiDeleteBin6Line } from 'react-icons/ri';
+import ReactMarkdown from 'react-markdown';
+import styles from './NoteDetail.module.css';
 
 const Note = ({ notes, setNotes }) => {
   const { idParam } = useParams();
@@ -17,16 +18,20 @@ const Note = ({ notes, setNotes }) => {
   };
 
   return (
-    <div>
-      <figure className='note'>
-        <RiDeleteBin6Line className='delete' onClick={deleteSingleNote} />
-        <h2>{title}</h2>
-        <p>{markdown}</p>
-        <figcaption>{lastModified}</figcaption>
-      </figure>
-      <button className='btn-note'>
-        <Link to='/notes'>Back to notes</Link>
-      </button>
+    <div className={styles.container}>
+      <div className={styles.top}>
+        <button className='note-btn'>
+          <Link to='/notes'>Go back</Link>
+        </button>
+        <button className='note-btn delete' onClick={deleteSingleNote}>
+          Delete note
+        </button>
+      </div>
+      <div className={styles.note}>
+        <h3>{title}</h3>
+        <ReactMarkdown className={styles.markdown}>{markdown}</ReactMarkdown>
+        <small>{lastModified}</small>
+      </div>
     </div>
   );
 };
