@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { Notes, NoteDetail, NotFound } from './pages/index';
-import Navbar from './components/Navbar';
-import './App.css';
+import Layout from './components/Layout';
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -19,19 +18,20 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path='/' element={<Navigate to='/notes' />} />
-          <Route
-            path='/notes'
-            element={<Notes notes={notes} setNotes={setNotes} />}
-          />
-          <Route
-            path='/notes/:idParam'
-            element={<NoteDetail notes={notes} setNotes={setNotes} />}
-          />
-          <Route path='*' element={<NotFound />} />
-        </Routes>
+        <Layout>
+          <Routes>
+            <Route path='/' element={<Navigate to='/notes' />} />
+            <Route
+              path='/notes'
+              element={<Notes notes={notes} setNotes={setNotes} />}
+            />
+            <Route
+              path='/notes/:idParam'
+              element={<NoteDetail notes={notes} setNotes={setNotes} />}
+            />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </Layout>
       </BrowserRouter>
     </div>
   );
